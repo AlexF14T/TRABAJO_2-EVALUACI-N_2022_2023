@@ -1,0 +1,325 @@
+/*CSS del juego*/
+
+html, body{
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*imagen de fondo*/
+body{
+
+    background-image: url(../img/de7wktw-b7d1006b-0634-4be5-87f4-be0f2f620484.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
+}
+h5{
+
+  cursor: pointer;
+}
+/*div que contiene todos los div*/
+#divprincipal{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*div que contiene la tabla*/
+#divtabla{
+
+
+    background-color: #469DB0;
+    padding:50px;
+    border-radius: 20px;
+    border: 5px#357180 solid;
+}
+
+/*estilo de la tabla, tr y td*/
+tr{
+    padding: 0;
+    margin: -20px;
+
+}
+table{
+
+  background: url(../img/suelo1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+table,td{
+    border-collapse: collapse;
+    border: solid 2px #2F494F;
+}
+
+td{
+
+    height: 10px;
+    width: 10px;
+    padding: 20px;
+}
+
+#td0-0{
+
+   background-color: rgba(0, 128, 0, 0.7);
+}
+/*estilo del personaje*/
+#personaje{
+
+    margin-left: -20px;    
+    margin-top: -30px;
+    position: absolute;
+    height: 55px;
+}
+/*estilo del cofre*/
+.cofre{
+
+    background-image: url(../img/tumba.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/*estilo del boton de cerrr ssesion*/
+.submit{
+  display: block;
+  margin: 20px auto;
+  border: 2px solid rgba(255, 0, 0, 0.7);
+  padding: 14px 20px;
+  border-radius: 24px;
+  cursor: pointer;
+  color:#303440;
+  background: rgb(255, 255, 255, 0.5);
+  transition: 1s;
+  font-weight: bolder;
+}
+.submit:hover{
+  background: rgba(255, 0, 0, 0.7);
+  transition: 1s;
+  color: white;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+      /*tamaño del dado*/
+        .dado{
+            width: 300px;
+            height: 300px;
+        }
+
+        /*div que contiene el dado*/
+        div.espacio3D {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            position: relative;
+            perspective-origin: center -75%;
+            perspective: 500px;
+            transform: scale(0.25);
+        }
+
+        /*IDs de cada lado del dado, sirve para hacer girar el dado y mostrar el numero*/
+        #cubo1 {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transform-style: preserve-3d;
+          transform: translateZ(-150px);
+        }
+        #cubo2 {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transform-style: preserve-3d;
+          transform: translateZ(-150px) rotateX(180deg);
+        }
+        #cubo3 {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transform-style: preserve-3d;
+          transform: translateZ(-150px) rotateY(90deg);
+        }
+        #cubo4 {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transform-style: preserve-3d;
+          transform: translateZ(-150px) rotateY(270deg);
+        }
+        #cubo5 {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transform-style: preserve-3d;
+          transform: translateZ(-150px) rotateX(90deg);
+        }
+        #cubo6 {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transform-style: preserve-3d;
+          transform: translateZ(-150px) rotateX(-90deg);
+        }
+
+        /*div de la base del dado*/
+        div.base {
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          background-color: rgba(0,0,0,0.15);
+          transform: translateX(75px) translateY(75px) rotateX(90deg) translateZ(-200px);
+          box-shadow: 0 0 50px 100px rgba(0,0,0,0.15);
+        }
+
+        /*estilo para cada lado del dado*/
+        aside.cara {
+          position: absolute;
+          width: 298px;
+          height: 298px;
+          background-color: white;
+          box-shadow: 0px 0px 5px rgba(0,0,0,0.75);
+        }
+        aside.cara1 { /* Frente */
+          transform: translateZ(150px);
+        }
+        aside.cara2 { /* Atrás */
+          transform: rotateY(180deg) translateZ(150px);
+        }
+        aside.cara3 { /* Izquierda */
+          transform: rotateY(-90deg) translateZ(150px);
+        }
+        aside.cara4 { /* derecha */
+          transform: rotateY(90deg) translateZ(150px);
+        }
+        aside.cara5 { /* abajo */
+          transform: rotateX(-90deg) translateZ(150px);
+        }
+        aside.cara6 { /* arriba */
+          transform: rotateX(90deg) translateZ(150px);
+        }
+
+  /*Animaciones para hacer girar el dado*/
+.gira{
+
+animation: gira 0.5s ease-in;
+}
+.gira1{
+
+  animation: gira1 0.5s ease-in;
+}
+
+@keyframes gira {
+  0% {
+    transform: translateZ(-150px) rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: translateZ(-150px) rotateY(360deg) rotateX(360deg);
+  } 
+}
+@keyframes gira1{
+  0% {
+    transform: translateZ(-150px) rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: translateZ(-150px) rotateY(360deg) rotateX(360deg);
+  } 
+}
+
+/*media queries para poder ajustar el contenido cuando la ventana se hace mas pequeña*/
+@media screen and (max-width: 880px){
+  
+  #divprincipal{
+
+    flex-direction: column;
+    justify-content: center;
+
+  }
+}
+
+@media screen and (max-width: 550px){
+  
+  #divtabla{
+
+
+    background-color: #469DB0;
+    padding:35px;
+    border-radius: 20px;
+    border: 5px#357180 solid;
+}  
+  td{
+
+    height: 10px;
+    width: 10px;
+    padding: 15px;
+}  
+  #personaje{
+
+    margin-left: -15px;    
+    margin-top: -26px;
+    position: absolute;
+    height: 45px;
+}
+}
+
+@media screen and (max-width: 430px){
+  
+  #divtabla{
+
+
+    background-color: #469DB0;
+    padding:35px;
+    border-radius: 20px;
+    border: 5px#357180 solid;
+}  
+  td{
+
+    height: 10px;
+    width: 10px;
+    padding: 12px;
+}  
+  #personaje{
+
+    margin-left: -12px;    
+    margin-top: -20px;
+    position: absolute;
+    height: 35px;
+}
+}
+
+@media screen and (max-height: 880px){
+  
+  #divtabla{
+
+
+    background-color: #469DB0;
+    padding:35px;
+    border-radius: 20px;
+    border: 5px#357180 solid;
+}  
+  td{
+
+    height: 10px;
+    width: 10px;
+    padding: 12px;
+}  
+  #personaje{
+
+    margin-left: -12px;    
+    margin-top: -20px;
+    position: absolute;
+    height: 35px;
+}
+}
