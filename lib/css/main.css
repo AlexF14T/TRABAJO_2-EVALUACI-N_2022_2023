@@ -214,11 +214,11 @@ body{
   /*Animaciones para hacer girar el dado*/
 .gira{
 
-animation: gira 0.5s ease-in;
+animation: gira 0.5s linear;
 }
 .gira1{
 
-  animation: gira1 0.5s ease-in;
+  animation: gira1 0.5s linear;
 }
 
 @keyframes gira {
